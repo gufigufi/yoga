@@ -11,7 +11,8 @@ var gulp         = require('gulp'),
     useref       = require('gulp-useref'),
     gulpif       = require('gulp-if'),
     uglify       = require('gulp-uglify'),
-    clean       = require('gulp-clean');
+    clean        = require('gulp-clean'),
+    imagemin     = require('gulp-imagemin');
 
 gulp.task('connect', function () {
     connect.server({
@@ -48,7 +49,12 @@ gulp.task('clean', function () {
     return gulp.src('dist')
         .pipe(clean({force: true}));
 });
-gulp.task('build', ['clean'], function () {
+gulp.task('img', function () {
+    gulp.src('app/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'))
+});
+gulp.task('build', ['clean', 'img'], function () {
     return gulp.src('app/*.html')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))

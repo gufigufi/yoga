@@ -1,3 +1,50 @@
-body {
-  background: #000;
-  color: #fff; }
+@Freestyle-Script {
+  font-family: freestyle-script;
+  src: url("../fonts/freestyle-script/freestyle-script.ttf");
+  src: url("../fonts/freestyle-script/freestyle-script.eot");
+  src: url("../fonts/freestyle-script/freestyle-script.otf");
+  src: url("../fonts/freestyle-script/freestyle-script.scg");
+  src: url("../fonts/freestyle-script/freestyle-script.woff"); }
+
+div, header, footer, nav, ul {
+  box-sizing: border-box; }
+
+.wrap {
+  width: 1170px;
+  margin: 0 auto; }
+
+.mainMenu {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 11.5px 0;
+  margin: 0; }
+  .mainMenu__item {
+    margin: 0 15px;
+    font-size: 14px; }
+    .mainMenu__item a {
+      text-decoration: none;
+      color: #555555;
+      position: relative;
+      display: inline-block;
+      transition: all 0.3s linear;
+      padding-bottom: 5px; }
+      .mainMenu__item a::after {
+        position: absolute;
+        left: 50%;
+        content: '';
+        height: 1px;
+        background: #5363db;
+        transition: all 0.3s linear;
+        width: 0;
+        bottom: 0; }
+      .mainMenu__item a:hover {
+        color: #5363db; }
+        .mainMenu__item a:hover::after {
+          width: 30px;
+          margin-left: -15px; }
+  .mainMenu__logo {
+    margin: 0 75px; }
+    .mainMenu__logo a::after {
+      display: none; }

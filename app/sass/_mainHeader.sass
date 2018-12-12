@@ -1,0 +1,35 @@
+.mainMenu
+    display: flex
+    list-style: none
+    justify-content: center
+    align-items: center
+    padding: 11.5px 0
+    margin: 0
+    &__item
+        margin: 0 15px
+        font-size: 14px
+        a
+            text-decoration: none
+            color: $gray
+            position: relative
+            display: inline-block
+            transition: all 0.3s linear
+            padding-bottom: 5px
+            &::after
+                position: absolute
+                left: 50%
+                content: ''
+                height: 1px
+                background: $accent
+                transition: all 0.3s linear
+                width: 0
+                bottom: 0
+            &:hover
+                color: $accent
+                &::after
+                    width: 30px
+                    margin-left: -15px
+    &__logo
+        margin: 0 75px
+        & a::after
+            display: none
