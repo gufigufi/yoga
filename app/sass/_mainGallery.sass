@@ -1,0 +1,33 @@
+.mainGallery
+  display: flex
+  flex-wrap: wrap
+  .photo
+    width: 25%
+    a
+      display: block
+      position: relative
+      &::before
+        content: ''
+        width: 100%
+        height: 100%
+        position: absolute
+        background: rgba(#5b6ceb, 0.8)
+        opacity: 0
+        z-index: 1
+        transition: all 0.3s linear
+      &::after
+        content: ''
+        background: url("../img/search.png") no-repeat
+        width: 71px
+        height: 71px
+        position: absolute
+        z-index: 2
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        margin: auto
+        opacity: 0
+        transition: all 0.3s linear
+      &:hover::before, &:hover::after
+        opacity: 1
