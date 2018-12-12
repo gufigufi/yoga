@@ -9,7 +9,8 @@
 div, header, footer, section, nav, ul, p {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 14px; }
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -17,7 +18,7 @@ body {
   margin: 0; }
 
 .wrap {
-  width: 1170px;
+  max-width: 1170px;
   margin: 0 auto;
   padding: 0 10px; }
 
@@ -26,14 +27,27 @@ body {
   display: table;
   clear: both; }
 
+h1, h2, h3 {
+  margin: 0;
+  padding: 0; }
+
 h1 {
   color: #ffffff;
   font-size: 48px;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.6;
-  letter-spacing: 1.6px;
-  margin: 0; }
+  letter-spacing: 1.6px; }
+
+h2 {
+  font-size: 30px;
+  color: #5363db;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+h3 {
+  color: #777777;
+  text-transform: uppercase; }
 
 .mainMenu {
   display: flex;
@@ -142,3 +156,44 @@ h1 {
     border-color: #333 transparent transparent transparent;
     right: 10px;
     top: calc(50% - 3px); }
+
+.yogaProgram {
+  padding: 125px 0; }
+  .yogaProgram__title {
+    text-align: center; }
+    .yogaProgram__title p {
+      font-family: FREESCPT, sans-serif;
+      font-size: 41px;
+      margin-top: 25px;
+      font-weight: normal;
+      color: #777777; }
+  .yogaProgram__class {
+    margin-top: 75px;
+    display: flex;
+    flex-wrap: wrap; }
+
+.yogaClass {
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  width: 49%;
+  border-radius: 8px;
+  margin-bottom: 2%; }
+  .yogaClass:nth-child(2n) {
+    margin-left: 1%; }
+  .yogaClass:nth-child(odd) {
+    margin-right: 1%; }
+  .yogaClass__img {
+    float: left;
+    width: 48%; }
+    .yogaClass__img img {
+      border-radius: 8px 0 0 8px; }
+  .yogaClass__content {
+    padding: 50px 30px;
+    float: left;
+    width: 52%; }
+  .yogaClass__description {
+    color: #555555;
+    margin: 20px 0;
+    line-height: 1.7; }
+  .yogaClass__annotation {
+    color: #999999; }
