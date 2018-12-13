@@ -272,3 +272,29 @@ h3 {
     right: -25px; }
     .aboutUs__next img {
       transform: rotate(180deg); }
+
+.features {
+  background: url("../img/features-bg.jpg") no-repeat;
+  color: #ffffff;
+  padding: 125px 0; }
+  .features__container {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; }
+
+.feature {
+  width: 25%;
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+  box-sizing: border-box; }
+  .feature:nth-child(n+5) {
+    margin-bottom: 0; }
+  .feature__title {
+    margin: 25px auto;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 75%;
+    height: 45px;
+    line-height: 1.3; }
