@@ -1,0 +1,38 @@
+.aboutUs
+  margin: 125px 0
+  &__description
+    float: left
+    width: 51%
+    padding: 25px 130px 25px 0
+    p
+      color: $gray
+      margin-top: 25px
+      line-height: 1.7
+  &__slider
+    float: right
+    width: 49%
+    position: relative
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15)
+  &__prew, &__next
+    position: absolute
+    z-index: 2
+    width: 50px
+    height: 50px
+    box-shadow: 0px 9px 9px 0px rgba(0, 0, 0, 0.1)
+    background: $white
+    border-radius: 50%
+    top: calc(50% - 25px)
+    cursor: pointer
+    img
+      position: absolute
+      margin: auto
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+  &__prew
+    left: -25px
+  &__next
+    right: -25px
+    img
+      transform: rotate(180deg)

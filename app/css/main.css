@@ -206,6 +206,8 @@ h3 {
     .mainGallery .photo a {
       display: block;
       position: relative; }
+      .mainGallery .photo a img {
+        width: 100%; }
       .mainGallery .photo a::before {
         content: '';
         width: 100%;
@@ -217,7 +219,7 @@ h3 {
         transition: all 0.3s linear; }
       .mainGallery .photo a::after {
         content: '';
-        background: url("../img/search.png") no-repeat;
+        background: url("../img/icons/search.png") no-repeat;
         width: 71px;
         height: 71px;
         position: absolute;
@@ -231,3 +233,42 @@ h3 {
         transition: all 0.3s linear; }
       .mainGallery .photo a:hover::before, .mainGallery .photo a:hover::after {
         opacity: 1; }
+
+.aboutUs {
+  margin: 125px 0; }
+  .aboutUs__description {
+    float: left;
+    width: 51%;
+    padding: 25px 130px 25px 0; }
+    .aboutUs__description p {
+      color: #555555;
+      margin-top: 25px;
+      line-height: 1.7; }
+  .aboutUs__slider {
+    float: right;
+    width: 49%;
+    position: relative;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15); }
+  .aboutUs__prew, .aboutUs__next {
+    position: absolute;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 9px 9px 0px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 50%;
+    top: calc(50% - 25px);
+    cursor: pointer; }
+    .aboutUs__prew img, .aboutUs__next img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+  .aboutUs__prew {
+    left: -25px; }
+  .aboutUs__next {
+    right: -25px; }
+    .aboutUs__next img {
+      transform: rotate(180deg); }
