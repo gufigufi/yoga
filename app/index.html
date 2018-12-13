@@ -229,7 +229,7 @@
                             <li>ENTRY TIME: 8A.M – 8P.M</li>
                             <li>NUTRITION ADVICER: NO</li>
                         </ul>
-                        <a href="" class="prise__buy">Buy now</a>
+                        <button class="prise__buy">Buy now</button>
                     </div><!--prise__content-->
                 </li>
                 <li class="prise">
@@ -242,7 +242,7 @@
                             <li>ENTRY TIME: 8A.M – 8P.M</li>
                             <li>NUTRITION ADVICER: YES</li>
                         </ul>
-                        <a href="" class="prise__buy">Buy now</a>
+                        <button class="prise__buy">Buy now</button>
                     </div><!--prise__content-->
                 </li>
                 <li class="prise">
@@ -255,7 +255,7 @@
                             <li>ENTRY TIME: 8A.M – 8P.M</li>
                             <li>NUTRITION ADVICER: YES</li>
                         </ul>
-                        <a href="" class="prise__buy">Buy now</a>
+                        <button class="prise__buy">Buy now</button>
                     </div><!--prise__content-->
                 </li>
             </ul><!--prises__list-->
@@ -263,6 +263,27 @@
     </div><!--wrap-->
 </div><!--pricesAndBloquotes-->
 
+
+<div id="popUp">
+    <div id="popUp__form">
+        <p class="mainSlider__formLabel">Trial Class</p>
+        <form action="#" class="orderForm clearfix">
+            <input type="text" placeholder="Enter your name">
+            <input type="tel" placeholder="Enter your phone">
+            <div class="orderForm__select">
+                <select name="select">
+                    <option selected disabled>Chose your class</option>
+                    <option value="2">Chose your class 2</option>
+                    <option value="3">Chose your class 3</option>
+                </select>
+            </div><!--orderForm__select-->
+            <input type="submit" value="Try it">
+        </form>
+        <p id="closePopUp">
+            <img src="img/icons/close.png" alt="">
+        </p>
+    </div>
+</div><!--popUp-->
 <!-- build:js js/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>

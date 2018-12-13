@@ -368,6 +368,51 @@ h3 {
     margin: 0 auto;
     display: block;
     border-radius: 20px;
-    transition: all 0.3s linear; }
+    transition: all 0.3s linear;
+    border: 0;
+    outline: 0;
+    cursor: pointer; }
     .prise__buy:hover {
       background: #475bf1; }
+
+#popUp {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  visibility: hidden;
+  transition: all 0.1s linear; }
+  #popUp.active {
+    visibility: visible; }
+
+#popUp__form {
+  width: 30%;
+  height: auto;
+  max-height: 350px;
+  background: #ffffff;
+  padding: 20px 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto; }
+
+#closePopUp {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: #ffffff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  transition: all 0.1s linear;
+  cursor: pointer; }
+  #closePopUp:hover {
+    background: #f00;
+    transform: rotate(180deg); }
+  #closePopUp img {
+    margin-top: 7px; }

@@ -1,0 +1,41 @@
+#popUp
+  position: fixed
+  top: 0
+  width: 100%
+  height: 100%
+  background: rgba(#000, 0.7)
+  z-index: 10
+  visibility: hidden
+  transition: all 0.1s linear
+  &.active
+    visibility: visible
+
+#popUp__form
+  width: 30%
+  height: auto
+  max-height: 350px
+  background: $white
+  padding: 20px 50px
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+
+#closePopUp
+  position: absolute
+  top: -15px
+  right: -15px
+  background: $white
+  border-radius: 50%
+  width: 30px
+  height: 30px
+  text-align: center
+  transition: all 0.1s linear
+  cursor: pointer
+  &:hover
+    background: #f00
+    transform: rotate(180deg)
+  img
+    margin-top: 7px
