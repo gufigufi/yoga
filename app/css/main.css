@@ -302,7 +302,6 @@ h3 {
 .pricesAndBloquotes {
   background: url("../img/prices.png") no-repeat;
   background-position: right bottom;
-  height: 1150px;
   padding: 100px 0 150px; }
 
 .prises__list {
@@ -416,3 +415,145 @@ h3 {
     transform: rotate(180deg); }
   #closePopUp img {
     margin-top: 7px; }
+
+.bloquotes {
+  margin-top: 100px;
+  position: relative; }
+  .bloquotes__for {
+    box-shadow: 0px 9px 50px 0px rgba(0, 0, 0, 0.1); }
+  .bloquotes__nav {
+    width: 100%;
+    max-width: 285px;
+    margin: 0 auto;
+    margin-top: -50px; }
+
+.bloquote {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 40px 150px 75px 70px; }
+  .bloquote__img {
+    float: left;
+    width: 25%; }
+    .bloquote__img img {
+      display: inline-block;
+      padding: 10px;
+      border: 2px solid #d7d7d7;
+      border-radius: 50%; }
+  .bloquote__content {
+    float: left;
+    width: 75%;
+    position: relative;
+    margin-top: 15px; }
+    .bloquote__content::before {
+      content: '';
+      height: 75px;
+      width: 1px;
+      position: absolute;
+      background: #d7d7d7;
+      left: -40px;
+      bottom: 0; }
+  .bloquote__comment {
+    font-style: italic;
+    font-size: 14px;
+    color: #555555;
+    position: relative;
+    line-height: 1.5; }
+    .bloquote__comment::before, .bloquote__comment::after {
+      content: '';
+      display: block;
+      background: url("../img/icons/bloquote.png") no-repeat;
+      width: 21px;
+      height: 15px;
+      position: absolute; }
+    .bloquote__comment::before {
+      left: -50px; }
+    .bloquote__comment::after {
+      transform: rotate(180deg);
+      right: -50px; }
+  .bloquote__trainer {
+    font-size: 13px;
+    color: #777;
+    margin: 35px 0 10px; }
+  .bloquote__name {
+    color: #5363db;
+    font-size: 18px;
+    font-weight: bold; }
+
+.trainer {
+  position: relative;
+  z-index: 1000; }
+  .trainer__content {
+    padding: 10px 40px; }
+  .trainer__img, .trainer__name {
+    float: left; }
+  .trainer__img {
+    width: 40%; }
+    .trainer__img img {
+      border: 2px solid #d7d7d7;
+      border-radius: 50%;
+      padding: 3px; }
+  .trainer__name {
+    width: 60%;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #555555; }
+  .trainer__position {
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    margin-top: 8px; }
+  .trainer__prew, .trainer__next {
+    position: absolute;
+    box-shadow: 0px 9px 9px 0px rgba(0, 0, 0, 0.1);
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    top: calc(50% - 15px); }
+    .trainer__prew img, .trainer__next img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 8px;
+      height: 12px; }
+  .trainer__next {
+    right: 0; }
+    .trainer__next img {
+      transform: rotate(180deg); }
+
+.my-dots {
+  position: absolute;
+  list-style: none;
+  right: -500px;
+  top: -170px; }
+
+.my-dots li {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px; }
+
+.my-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent; }
+
+.my-dots li button:before {
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: url("../img/icons/dot.png");
+  cursor: pointer; }
+
+.my-dots li.slick-active button:before {
+  content: url("../img/icons/dotActiv.png"); }

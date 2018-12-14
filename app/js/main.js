@@ -25,3 +25,22 @@ $('#closePopUp').click(function () {
 $('#popUp').click(function () {
     $(this).removeClass('active')
 });
+
+$('.bloquotes__for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.bloquotes__nav'
+});
+$('.bloquotes__nav').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: '.bloquotes__for',
+    dots: true,
+    focusOnSelect: true,
+    prevArrow: '<div class="trainer__prew"><img src="../img/icons/arrow.png" alt=""></div>',
+    nextArrow: '<div class="trainer__next"><img src="../img/icons/arrow.png" alt=""></div>',
+    dotsClass: "my-dots"
+});

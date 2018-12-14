@@ -1,0 +1,135 @@
+.bloquotes
+  margin-top: 100px
+  position: relative
+  &__for
+    box-shadow: 0px 9px 50px 0px rgba(0, 0, 0, 0.1)
+  &__nav
+    width: 100%
+    max-width: 285px
+    margin: 0 auto
+    margin-top: -50px
+.bloquote
+  background: $white
+  border-radius: $radius
+  padding: 40px 150px 75px 70px
+  &__img
+    float: left
+    width: 25%
+    img
+      display: inline-block
+      padding: 10px
+      border: 2px solid #d7d7d7
+      border-radius: 50%
+  &__content
+    float: left
+    width: 75%
+    position: relative
+    margin-top: 15px
+    &::before
+      content: ''
+      height: 75px
+      width: 1px
+      position: absolute
+      background: #d7d7d7
+      left: -40px
+      bottom: 0
+  &__comment
+    font-style: italic
+    font-size: 14px
+    color: $gray
+    position: relative
+    line-height: 1.5
+    &::before, &::after
+      content: ''
+      display: block
+      background: url("../img/icons/bloquote.png") no-repeat
+      width: 21px
+      height: 15px
+      position: absolute
+    &::before
+      left: -50px
+    &::after
+      transform: rotate(180deg)
+      right: -50px
+  &__trainer
+    font-size: 13px
+    color: #777
+    margin: 35px 0 10px
+  &__name
+    color: $accent
+    font-size: 18px
+    font-weight: bold
+.trainer
+  position: relative
+  z-index: 1000
+  &__content
+    padding: 10px 40px
+  &__img, &__name
+    float: left
+  &__img
+    width: 40%
+    img
+      border: 2px solid #d7d7d7
+      border-radius: 50%
+      padding: 3px
+  &__name
+    width: 60%
+    margin-top: 20px
+    font-size: 14px
+    font-weight: 700
+    color: $gray
+  &__position
+    font-size: 12px
+    font-weight: normal
+    display: inline-block
+    margin-top: 8px
+  &__prew, &__next
+    position: absolute
+    box-shadow: 0px 9px 9px 0px rgba(0, 0, 0, 0.1)
+    width: 30px
+    height: 30px
+    background: $white
+    border-radius: 50%
+    cursor: pointer
+    z-index: 2
+    top: calc(50% - 15px)
+    img
+      position: absolute
+      margin: auto
+      top: 0
+      right: 0
+      left: 0
+      bottom: 0
+      width: 8px
+      height: 12px
+  &__next
+    right: 0
+    img
+      transform: rotate(180deg)
+
+.my-dots
+  position: absolute
+  list-style: none
+  right: -500px
+  top: -170px
+.my-dots li
+  position: relative
+  cursor: pointer
+  margin-bottom: 20px
+.my-dots li button
+  font-size: 0
+  line-height: 0
+  display: block
+  color: transparent
+  border: 0
+  outline: none
+  background: transparent
+.my-dots li button:before
+  top: 0
+  left: 0
+  width: 20px
+  height: 20px
+  content: url('../img/icons/dot.png')
+  cursor: pointer
+.my-dots li.slick-active button:before
+  content: url("../img/icons/dotActiv.png")

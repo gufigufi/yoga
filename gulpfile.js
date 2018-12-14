@@ -40,9 +40,15 @@ gulp.task('html', function () {
     .pipe(connect.reload())
 });
 
+gulp.task('js', function () {
+    gulp.src('app/js/*.js')
+        .pipe(connect.reload())
+});
+
 gulp.task('watch', function () {
     gulp.watch('app/**/*.sass', ['sass'])
     gulp.watch('app/*.html', ['html'])
+    gulp.watch('app/js/*.js', ['js'])
     gulp.watch('bower.json', ['bower'])
 });
 gulp.task('clean', function () {
