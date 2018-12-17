@@ -1,0 +1,45 @@
+.burger
+  display: none
+  &__item
+    height: 3px
+    width: 25px
+    background-color: $accent
+    position: relative
+    border-radius: 8px
+    &::before, &::after
+      content: ""
+      display: block
+      position: absolute
+      height: 3px
+      width: 25px
+      background-color: $accent
+      left: 0
+      top: 7px
+      border-radius: 8px
+    &::after
+      top: 14px
+  &__trigger
+    position: absolute
+    height: 30px
+    width: 30px
+    top: 0
+    cursor: pointer
+
+.burgerMenu
+  list-style: none
+  position: absolute
+  left: -290px
+  top: 0
+  background: $accent
+  margin: 0
+  padding: 70px
+  height: 100%
+  transition: all 0.5s ease
+  z-index: 10
+  &.active
+    left: 0
+  li
+    margin-bottom: 30px
+  a
+    text-decoration: none
+    color: #fff

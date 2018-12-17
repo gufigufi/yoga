@@ -44,3 +44,26 @@ $('.bloquotes__nav').slick({
     nextArrow: '<div class="trainer__next"><img src="../img/icons/arrow.png" alt=""></div>',
     dotsClass: "my-dots"
 });
+
+$(document).ready(function(){
+    $(".mainHeader").on("click","a", function (event) {
+        //отменяем стандартную обработку нажатия по ссылке
+        event.preventDefault();
+        //забираем идентификатор бока с атрибута href
+        var id  = $(this).attr('href'),
+        //узнаем высоту от начала страницы до блока на который ссылается якорь
+        top = $(id).offset().top;
+        //анимируем переход на расстояние - top за 1500 мс
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
+});
+
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 706){
+        $('.mainHeader').addClass("slide");
+        $('.yogaProgram').addClass("slide");
+    }  else{
+        $('.mainHeader').removeClass("slide");
+        $('.yogaProgram').removeClass("slide");
+    }
+});

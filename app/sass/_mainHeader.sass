@@ -1,13 +1,18 @@
-.mainMenu
-    display: flex
-    list-style: none
-    justify-content: center
-    align-items: center
-    padding: 11.5px 0
-    margin: 0
-    &__item
-        margin: 0 15px
-        font-size: 14px
+.mainHeader
+    padding: 15px 0
+    transition: all 0.3s linear
+    nav
+        display: grid
+        grid-template-columns: 1fr 140px 1fr
+        grid-gap: $gutter
+        align-items: center
+        ul
+            list-style: none
+            padding: 0 0 0 $gutter
+        li
+            display: inline-block
+            margin: 0 15px
+            font-size: 14px
         a
             text-decoration: none
             color: $gray
@@ -29,7 +34,14 @@
                 &::after
                     width: 30px
                     margin-left: -15px
-    &__logo
-        margin: 0 120px
-        & a::after
-            display: none
+.maimLogo
+    text-align: center
+.contactMenu
+    text-align: right
+
+.mainHeader.slide
+    padding: 0
+    position: fixed
+    width: 100%
+    background: #fff
+    z-index: 50

@@ -49,24 +49,75 @@ h3 {
   color: #777777;
   text-transform: uppercase; }
 
-.mainMenu {
-  display: flex;
+.burger {
+  display: none; }
+  .burger__item {
+    height: 3px;
+    width: 25px;
+    background-color: #5363db;
+    position: relative;
+    border-radius: 8px; }
+    .burger__item::before, .burger__item::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 25px;
+      background-color: #5363db;
+      left: 0;
+      top: 7px;
+      border-radius: 8px; }
+    .burger__item::after {
+      top: 14px; }
+  .burger__trigger {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 0;
+    cursor: pointer; }
+
+.burgerMenu {
   list-style: none;
-  justify-content: center;
-  align-items: center;
-  padding: 11.5px 0;
-  margin: 0; }
-  .mainMenu__item {
-    margin: 0 15px;
-    font-size: 14px; }
-    .mainMenu__item a {
+  position: absolute;
+  left: -290px;
+  top: 0;
+  background: #5363db;
+  margin: 0;
+  padding: 70px;
+  height: 100%;
+  transition: all 0.5s ease;
+  z-index: 10; }
+  .burgerMenu.active {
+    left: 0; }
+  .burgerMenu li {
+    margin-bottom: 30px; }
+  .burgerMenu a {
+    text-decoration: none;
+    color: #fff; }
+
+.mainHeader {
+  padding: 15px 0;
+  transition: all 0.3s linear; }
+  .mainHeader nav {
+    display: grid;
+    grid-template-columns: 1fr 140px 1fr;
+    grid-gap: 10px;
+    align-items: center; }
+    .mainHeader nav ul {
+      list-style: none;
+      padding: 0 0 0 10px; }
+    .mainHeader nav li {
+      display: inline-block;
+      margin: 0 15px;
+      font-size: 14px; }
+    .mainHeader nav a {
       text-decoration: none;
       color: #555555;
       position: relative;
       display: inline-block;
       transition: all 0.3s linear;
       padding-bottom: 5px; }
-      .mainMenu__item a::after {
+      .mainHeader nav a::after {
         position: absolute;
         left: 50%;
         content: '';
@@ -75,15 +126,24 @@ h3 {
         transition: all 0.3s linear;
         width: 0;
         bottom: 0; }
-      .mainMenu__item a:hover {
+      .mainHeader nav a:hover {
         color: #5363db; }
-        .mainMenu__item a:hover::after {
+        .mainHeader nav a:hover::after {
           width: 30px;
           margin-left: -15px; }
-  .mainMenu__logo {
-    margin: 0 120px; }
-    .mainMenu__logo a::after {
-      display: none; }
+
+.maimLogo {
+  text-align: center; }
+
+.contactMenu {
+  text-align: right; }
+
+.mainHeader.slide {
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  z-index: 50; }
 
 .mainSlider {
   background: url("../img/slider-bg.jpg") no-repeat;
@@ -197,6 +257,9 @@ h3 {
     line-height: 1.7; }
   .yogaClass__annotation {
     color: #999999; }
+
+.yogaProgram.slide {
+  margin-top: 230px; }
 
 .mainGallery {
   display: flex;

@@ -21,31 +21,37 @@
 <body>
 
 <header class="mainHeader">
-    <nav class="wrap">
-        <ul class="mainMenu">
-            <li class="mainMenu__item">
-                <a href="#">About us</a>
-            </li>
-            <li class="mainMenu__item">
-                <a href="#">Reservation</a>
-            </li>
-            <li class="mainMenu__item">
-                <a href="#">Gallery</a>
-            </li>
-            <li class="mainMenu__item mainMenu__logo">
-                <a href="#"><img src="img/logo.png" alt="Yoga"></a>
-            </li>
-            <li class="mainMenu__item">
-                <a href="#">Blog</a>
-            </li>
-            <li class="mainMenu__item">
-                <a href="#">Elements</a>
-            </li>
-            <li class="mainMenu__item">
-                <a href="#">Shop</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="wrap">
+        <nav>
+            <ul class="mainMenu">
+                <li><a href="#aboutUs">About us</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+            <div class="maimLogo">
+                <a href="#" class="maimLogo">
+                    <img src="img/logo.png" alt="Yoga">
+                </a>
+            </div>
+            <ul class="contactMenu">
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="elements">Elements</a></li>
+                <li><a href="#shop">Shop</a></li>
+            </ul>
+            <div class="burger">
+                <div class="burger__item"></div>
+                <div class="burger__trigger"></div>
+            </div>
+        </nav>
+    </div>
+    <ul class="burgerMenu">
+        <li><a href="#aboutUs">About us</a></li>
+        <li><a href="#reservation">Reservation</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="elements">Elements</a></li>
+        <li><a href="#shop">Shop</a></li>
+    </ul>
 </header><!-- mainHeader -->
 
 <section class="mainSlider">
@@ -125,7 +131,7 @@
     </div><!--wrap-->
 </section><!--yogaProgram-->
 
-<div class="mainGallery">
+<div class="mainGallery" id="gallery">
     <div class="photo">
         <a href="img/gallery/yoga-gallery-1.jpg" data-lightbox="roadtrip">
             <img src="img/gallery/yoga-gallery-1.jpg" alt="photo1" />
@@ -154,7 +160,7 @@
     </div>
 </div><!--mainGallery-->
 
-<section  class="aboutUs">
+<section  class="aboutUs" id="aboutUs">
     <div class="wrap clearfix">
         <div class="aboutUs__description">
             <h2>About us</h2>
@@ -215,7 +221,7 @@
     </div><!--wrap-->
 </div><!--features-->
 
-<div class="pricesAndBloquotes">
+<div class="pricesAndBloquotes" id="reservation">
     <div class="wrap">
         <div class="prises">
             <ul class="prises__list">
