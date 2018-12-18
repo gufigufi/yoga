@@ -4,6 +4,7 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "jquery": "^3.3.1",
-    "lightbox2": "lightbox#^2.10.0"
+    "lightbox2": "lightbox#^2.10.0",
+    "slick-carousel": "^1.8.1"
   }
 }

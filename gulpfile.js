@@ -10,7 +10,9 @@ var gulp         = require('gulp'),
     uglify       = require('gulp-uglify'),
     clean        = require('gulp-clean'),
     imagemin     = require('gulp-imagemin'),
-    browserSync  = require('browser-sync').create();
+    browserSync  = require('browser-sync').create(),
+    sourcemaps   = require('gulp-sourcemaps'),
+    lazypipe     = require('lazypipe');
 
 gulp.task('serve', ['sass'], function() {
 
@@ -45,19 +47,23 @@ gulp.task('sass', function () {
 
 gulp.task('clean', function () {
     return gulp.src('dist')
-        .pipe(clean({force: true}));
+        .pipe(clean());
 });
 gulp.task('img', function () {
-    gulp.src('app/img/*')
+    gulp.src('app/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/img'))
 });
-gulp.task('build', ['clean', 'img'], function () {
+gulp.task('font', function () {
+    gulp.src('app/fonts/**/*')
+        .pipe(gulp.dest('dist/fonts'))
+});
+gulp.task('build', ['clean', 'img', 'font'], function () {
     return gulp.src('app/*.html')
-        .pipe(useref())
+        .pipe(useref({}, lazypipe().pipe(sourcemaps.init, { loadMaps: true })))
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', minifyCss()))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist'));
 });
-
 gulp.task('default', ['serve']);
