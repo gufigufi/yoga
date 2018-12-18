@@ -16,7 +16,7 @@ document.onwheel = function(e) {
         e.preventDefault();
     }
 };
-$('.prise__buy').click(function(){
+$('.price__buy').click(function(){
     $('#popUp').addClass('active');
 });
 $('#closePopUp').click(function () {
@@ -24,6 +24,13 @@ $('#closePopUp').click(function () {
 });
 $('#popUp').click(function () {
     $(this).removeClass('active')
+});
+//изменение цвета заголовка цен при наведении на кнопку
+$('.price__buy').mouseover(function () {
+   $('.price__cost').css("background-color", "#475bf1");
+});
+$('.price__buy').mouseout(function () {
+    $('.price__cost').css("background-color", "#5363db");
 });
 
 $('.bloquotes__for').slick({
@@ -44,7 +51,7 @@ $('.bloquotes__nav').slick({
     nextArrow: '<div class="trainer__next"><img src="../img/icons/arrow.png" alt=""></div>',
     dotsClass: "my-dots"
 });
-
+//плавный скрол
 $(document).ready(function(){
     $(".mainHeader").on("click","a", function (event) {
         //отменяем стандартную обработку нажатия по ссылке
@@ -57,7 +64,7 @@ $(document).ready(function(){
         $('body,html').animate({scrollTop: top}, 1500);
     });
 });
-
+//прилепающий хедер
 $(window).scroll(function() {
     if ($(this).scrollTop() > 706){
         $('.mainHeader').addClass("slide");
@@ -66,4 +73,13 @@ $(window).scroll(function() {
         $('.mainHeader').removeClass("slide");
         $('.yogaProgram').removeClass("slide");
     }
+});
+/*бургер меню*/
+$('.burger__trigger').click(function(){
+    $('.burgerMenu').toggleClass('active');
+});
+$(document).click(function(event) {
+    if ($(event.target).closest(".burger__trigger").length ) return;
+    $('.burgerMenu').removeClass('active');
+    event.stopPropagation();
 });

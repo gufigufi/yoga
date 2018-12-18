@@ -4,21 +4,24 @@ var gulp         = require('gulp'),
     sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifyCss    = require('gulp-minify-css'),
-    rename       = require('gulp-rename'),
-    connect      = require('gulp-connect'),
-    livereload   = require('gulp-livereload'),
     wiredep      = require('wiredep').stream,
     useref       = require('gulp-useref'),
     gulpif       = require('gulp-if'),
     uglify       = require('gulp-uglify'),
     clean        = require('gulp-clean'),
-    imagemin     = require('gulp-imagemin');
+    imagemin     = require('gulp-imagemin'),
+    browserSync  = require('browser-sync').create();
 
-gulp.task('connect', function () {
-    connect.server({
-        root: 'app',
-        livereload: true
-    })
+gulp.task('serve', ['sass'], function() {
+
+    browserSync.init({
+        server: "app"
+    });
+
+    gulp.watch("app/sass/**/*.sass", ['sass']);
+    gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch('app/js/*.js').on('change', browserSync.reload);
+    gulp.watch('bower.json', ['bower']);
 });
 
 gulp.task('bower', function () {
@@ -32,25 +35,14 @@ gulp.task('bower', function () {
 gulp.task('sass', function () {
     gulp.src('app/sass/**/*.sass')
         .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest('app/css'))
-        .pipe(connect.reload())
-});
-gulp.task('html', function () {
-    gulp.src('app/*.html')
-    .pipe(connect.reload())
+        .pipe(browserSync.stream());
 });
 
-gulp.task('js', function () {
-    gulp.src('app/js/*.js')
-        .pipe(connect.reload())
-});
-
-gulp.task('watch', function () {
-    gulp.watch('app/**/*.sass', ['sass'])
-    gulp.watch('app/*.html', ['html'])
-    gulp.watch('app/js/*.js', ['js'])
-    gulp.watch('bower.json', ['bower'])
-});
 gulp.task('clean', function () {
     return gulp.src('dist')
         .pipe(clean({force: true}));
@@ -68,4 +60,4 @@ gulp.task('build', ['clean', 'img'], function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['serve']);
