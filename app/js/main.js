@@ -26,11 +26,13 @@ $('#popUp').click(function () {
     $(this).removeClass('active')
 });
 //изменение цвета заголовка цен при наведении на кнопку
-$('.price__buy').mouseover(function () {
-   $('.price__cost').css("background-color", "#475bf1");
-});
-$('.price__buy').mouseout(function () {
-    $('.price__cost').css("background-color", "#5363db");
+
+$('.price:has(.price__buy)')
+    .mouseover(function () {
+        $(this).addClass('active');
+})
+    .mouseout(function () {
+        $(this).removeClass('active');
 });
 
 $('.bloquotes__for').slick({
@@ -59,7 +61,7 @@ $(document).ready(function(){
         //забираем идентификатор бока с атрибута href
         var id  = $(this).attr('href'),
         //узнаем высоту от начала страницы до блока на который ссылается якорь
-        top = $(id).offset().top;
+        top = $(id).offset().top - 80;
         //анимируем переход на расстояние - top за 1500 мс
         $('body,html').animate({scrollTop: top}, 1500);
     });

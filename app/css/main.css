@@ -486,6 +486,9 @@ h3 {
     .price__buy:hover {
       background: #475bf1; }
 
+.price.active .price__cost {
+  background: #475bf1; }
+
 #popUp {
   position: fixed;
   top: 0;
